@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MARO TEMPLATES - جنوب بورسعيد - لكل مصر - 250ج</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08080f;color:#fff;font-family:Cairo;overflow-x:hidden}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero{background:radial-gradient(circle at 50% 0%,#9c5cff44,#08080f),#08080f;padding:45px 20px;text-align:center}
+.badge{background:linear-gradient(110deg,#ff2e6d,#9c5cff);padding:8px 18px;border-radius:99px;font-weight:900;display:inline-block}
+.btn{padding:12px 16px;border-radius:12px;border:0;font-weight:900;text-decoration:none;display:inline-block;margin:4px;cursor:pointer;font-size:.9rem;transition:.3s}
+.btn-main{background:linear-gradient(110deg,#ff2e6d,#9c5cff);color:#fff}
+.btn-main:hover{transform:translateY(-2px)}
+.btn-dark{background:#181820;border:1px solid #2a2a38;color:#fff}
+.grid{padding:20px;display:grid;gap:14px;max-width:1100px;margin:auto}
+@media(min-width:650px){.grid{grid-template-columns:1fr 1fr}} @media(min-width:1000px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#141420;border:1px solid #2a2a38;border-radius:20px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#9c5cff;box-shadow:0 10px 30px #9c5cff20}
+.thumb{height:150px;background-size:cover;background-position:center;position:relative;display:flex;align-items:end;padding:10px}
+.thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(#0000,#141420)}
+.tag{padding:5px 11px;border-radius:99px;font-size:.75rem;font-weight:900;position:absolute;top:10px;right:10px;z-index:2}
+.info{padding:14px}
+.price{font-size:1.5rem;font-weight:900}.old{color:#666;text-decoration:line-through;font-size:.85rem}
+.customizer{background:#10101c;border:2px solid #9c5cff;border-radius:20px;padding:18px;margin:20px auto;max-width:650px;position:sticky;top:10px;z-index:99;backdrop-filter:blur(10px)}
+input{width:100%;padding:11px;border-radius:10px;border:1px solid #333;background:#08080f;color:#fff;margin:6px 0;font-family:Cairo;outline:none}
+input:focus{border-color:#9c5cff}
+.whats-float{position:fixed;bottom:20px;left:20px;z-index:9999;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 20px #25D36680;text-decoration:none;animation:float 2s infinite}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/201030980823" class="whats-float" target="_blank">💬</a>
+
+<div class="hero">
+<div class="badge">👑 MARWAN GAD - جنوب بورسعيد - بنخدم كل مصر</div>
+<h1 style="font-size:2.6rem;margin:14px 0;line-height:1.1">منصات جاهزة<br><span style="color:#9c5cff">لكل مصر - 250ج / 300ج / 350ج</span></h1>
+<p style="color:#aaa">جيم - كافيه - عربي - انجليزي - تاريخ - رياضة - كورسات - متاجر SMM</p>
+<p style="color:#53f4e5;font-size:.9rem;margin-top:8px">✅ القاهرة - اسكندرية - اسماعيلية - بورسعيد - الدلتا - الصعيد<br>📍 من جنوب بورسعيد - تسليم أونلاين في 10 دقايق<br>📱 واتساب وكاش: <b style="color:#fff">01030980823</b></p>
+<a href="https://wa.me/201030980823?text=عايز اشوف المنصات - 01030980823" class="btn btn-main" style="margin-top:14px">كلمني واتساب 01030980823 💬</a>
+</div>
+
+<div class="customizer">
+<h3 style="text-align:center">⚙️ خصص للعميل في ثانية - أي محافظة</h3>
+<p style="color:#aaa;text-align:center;font-size:.85rem">اكتب بيانات العميل وهيتغير أوتوماتيك</p>
+<input id="c_name" placeholder="اسم المشروع - مثلا: ELITE GYM القاهرة">
+<input id="c_cash" placeholder="رقم فودافون كاش العميل - لو مش هتغيره سيبه فاضي">
+<input id="c_section" placeholder="القسم - جيم / كافيه / عربي / انجليزي / تاريخ / كورس">
+<input id="c_city" placeholder="المحافظة - القاهرة / اسكندرية / اسماعيلية / بورسعيد">
+<input id="c_phone" placeholder="رقم واتساب العميل">
+<button class="btn btn-main" style="width:100%;margin-top:8px" onclick="generate()">🔥 طلع الكود الجاهز باسم العميل</button>
+<pre id="output" style="background:#08080f;border:1px solid #333;border-radius:12px;padding:12px;margin-top:10px;white-space:pre-wrap;display:none;color:#53f4e5;font-size:.75rem;line-height:1.6"></pre>
+</div>
+
+<div class="grid">
+
+<!-- 250ج -->
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600')"><span class="tag" style="background:#ff2e6d;color:#fff">جيم - 250ج</span></div>
+<div class="info"><h3>منصة جيم - ELITE GYM</h3><p style="color:#aaa;font-size:.85rem">عروض + اشتراكات + حجز واتساب + خريطة</p><div class="price">250ج <span class="old">1000ج</span></div><button class="btn btn-main" onclick="buy('منصة جيم - 250ج')">اشتري 250ج - واتساب</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?q=80&w=600')"><span class="tag" style="background:#ff9a00;color:#000">كافيه - 250ج</span></div>
+<div class="info"><h3>منصة كافيه - CAFE 360</h3><p style="color:#aaa;font-size:.85rem">منيو + طلب دليفري + بلايستيشن</p><div class="price">250ج <span class="old">1000ج</span></div><button class="btn btn-main" onclick="buy('منصة كافيه - 250ج')">اشتري 250ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600')"><span class="tag" style="background:#53f4e5;color:#000">متجر SMM - 250ج</span></div>
+<div class="info"><h3>متجر SMM - بيع متابعين</h3><p style="color:#aaa;font-size:.85rem">حاسبة أسعار + طلبات واتساب أوتوماتيك</p><div class="price">250ج <span class="old">1500ج</span></div><button class="btn btn-main" onclick="buy('متجر SMM - 250ج')">اشتري 250ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background:linear-gradient(110deg,#111,#333)"><span class="tag" style="background:#fff;color:#000">موقع شركة - 250ج</span></div>
+<div class="info"><h3>موقع شركة / محل / مطعم</h3><p style="color:#aaa;font-size:.85rem">صفحة تعريفية + واتساب + خريطة</p><div class="price">250ج</div><button class="btn btn-main" onclick="buy('موقع شركة - 250ج')">اشتري 250ج</button></div>
+</div>
+
+<!-- 300ج -->
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600')"><span class="tag" style="background:#d4af37;color:#000">عربي - 300ج</span></div>
+<div class="info"><h3>منصة لغة عربية - نحو وبلاغة</h3><p style="color:#aaa;font-size:.85rem">45 فيديو + حركات متحركة + مذكرات PDF</p><div class="price">300ج <span class="old">3500ج</span></div><button class="btn btn-main" onclick="buy('منصة عربي - 300ج')">اشتري 300ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600')"><span class="tag" style="background:#0077ff;color:#fff">انجليزي - 300ج</span></div>
+<div class="info"><h3>منصة انجليزي - Grammar كامل</h3><p style="color:#aaa;font-size:.85rem">محادثة + قواعد + امتحانات + مذكرات</p><div class="price">300ج</div><button class="btn btn-main" onclick="buy('منصة انجليزي - 300ج')">اشتري 300ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1461360228755-6e81c478b882?q=80&w=600')"><span class="tag" style="background:#8b4513;color:#fff">تاريخ - 300ج</span></div>
+<div class="info"><h3>منصة تاريخ - خرايط متحركة</h3><p style="color:#aaa;font-size:.85rem">خرايط زمنية + قصص + مراجعات ليلة الامتحان</p><div class="price">300ج</div><button class="btn btn-main" onclick="buy('منصة تاريخ - 300ج')">اشتري 300ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600')"><span class="tag" style="background:#9c5cff;color:#fff">رياضة - 300ج</span></div>
+<div class="info"><h3>منصة رياضة - جبر وهندسة</h3><p style="color:#aaa;font-size:.85rem">قوانين متحركة + بنك أسئلة + حلول</p><div class="price">300ج</div><button class="btn btn-main" onclick="buy('منصة رياضة - 300ج')">اشتري 300ج</button></div>
+</div>
+
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=600')"><span class="tag" style="background:#00d4ff;color:#000">فيزياء - 300ج</span></div>
+<div class="info"><h3>منصة فيزياء / كيميا / أحياء</h3><p style="color:#aaa;font-size:.85rem">تجارب + معادلات متحركة + امتحانات</p><div class="price">300ج</div><button class="btn btn-main" onclick="buy('منصة علوم - 300ج')">اشتري 300ج</button></div>
+</div>
+
+<!-- 350ج -->
+<div class="card">
+<div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600')"><span class="tag" style="background:linear-gradient(110deg,#ff2e6d,#9c5cff);color:#fff">كورس - 350ج</span></div>
+<div class="info"><h3>كورسات - برمجة / انجليزي / عربي</h3><p style="color:#aaa;font-size:.85rem">20 فيديو + شهادة + متابعة واتساب يومية</p><div class="price">350ج <span class="old">1200ج</span></div><button class="btn btn-main" onclick="buy('كورس - 350ج')">اشتري 350ج</button></div>
+</div>
+
+<div class="card" style="border:2px solid #ff2e6d">
+<div class="thumb" style="background:linear-gradient(110deg,#9c5cff,#ff2e6d)"><span class="tag" style="background:#000;color:#fff">ذهبية - 350ج - الأكثر مبيعاً 🔥</span></div>
+<div class="info"><h3>👑 الباقة الذهبية - كل المواد + دومين مجاني</h3><p style="color:#aaa;font-size:.85rem">5 مواد + 50 فيديو + كل المذكرات + دومين مجاني</p><div class="price">350ج <span class="old">5000ج</span></div><p style="color:#ff2e6d;font-size:.8rem">بتتباع كل يوم 🔥</p><button class="btn btn-main" onclick="buy('الباقة الذهبية - 350ج')" style="background:linear-gradient(110deg,#ff2e6d,#9c5cff)">اشتري الذهبية 350ج 👑</button></div>
+</div>
+
+</div>
+
+<div style="text-align:center;padding:30px">
+<h2>ازاي تستلم؟</h2>
+<p style="color:#aaa;max-width:600px;margin:10px auto;line-height:1.8">1- دوس اشتري - هيفتح واتساب على رقم <b style="color:#fff">01030980823</b><br>2- ابعتلي اسم مشروعك ومحافظتك<br>3- أحولك المنصة باسمك وصورتك ورقم كاشك في 10 دقايق<br>4- تدفع فودافون كاش على نفس الرقم 01030980823</p>
+<a href="https://wa.me/201030980823?text=عايز اشتري منصة - 01030980823" class="btn btn-main">اطلب واتساب دلوقتي - 01030980823 💬</a>
+</div>
+
+<script>
+const MY_WA = "201030980823";
+function buy(type){
+let name=document.getElementById('c_name').value||'مشروع جديد';
+let city=document.getElementById('c_city').value||'القاهرة';
+let section=document.getElementById('c_section').value||'';
+let msg=`السلام عليكم يا مروان%0Aعايز ${type}%0A%0Aالاسم: ${name}%0Aالمحافظة: ${city}%0Aالقسم: ${section}%0Aرقم الكاش: 01030980823`;
+window.open(`https://wa.me/${MY_WA}?text=${msg}`,'_blank');
+}
+function generate(){
+let name=document.getElementById('c_name').value||'ELITE GYM';
+let cash=document.getElementById('c_cash').value||'01030980823';
+let sec=document.getElementById('c_section').value||'جيم';
+let city=document.getElementById('c_city').value||'القاهرة';
+let phone=document.getElementById('c_phone').value||cash;
+let code=`✅ كود جاهز للعميل - جنوب بورسعيد لكل مصر:\n\nالاسم: ${name}\nالمحافظة: ${city}\nالقسم: ${sec}\nكاش العميل: ${cash}\nواتساب العميل: ${phone}\n\nرقمك الثابت للاستلام: 01030980823\n\n--- ازاي تسلم ---\n1. افتح ملف المنصة الأصلية (جيم / عربي / ...)\n2. اعمل Find & Replace:\n   Find: 01030980823 => Replace: ${cash}\n   Find: ELITE GYM => Replace: ${name}\n   Find: 201030980823 => Replace: ${phone.replace(/^0/,'20')}\n3. ابعته للعميل وخد فلوسك على 01030980823 💰`;
+document.getElementById('output').style.display='block';
+document.getElementById('output').innerText=code;
+window.scrollTo({top:document.getElementById('output').offsetTop-100,behavior:'smooth'});
+}
+</script>
+
+<div style="text-align:center;padding:30px;color:#666;font-size:.85rem">
+MARWAN GAD © 2026 - جنوب بورسعيد ⚓<br>
+بنخدم كل مصر - القاهرة - اسكندرية - اسماعيلية - بورسعيد - الدلتا - الصعيد<br>
+واتساب وكاش: 01030980823 - تسليم 10 دقايق أونلاين 👑
+</div>
+
+</body>
+</html>
